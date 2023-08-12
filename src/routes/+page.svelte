@@ -5,17 +5,7 @@
 	onMount(() => {
 		new Vivus('box', { duration: 500, type: 'oneByOne' }, () => {});
 	});
-
-	let cubeFill = {
-		cube: ['darkgray'],
-		cubeTop: ['red'],
-		cubeRight: ['green', 'yellow', 'blue'],
-		cubeLeft: ['orange', 'cyan']
-	};
 </script>
-
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
 <div>
 	<svg
@@ -31,48 +21,54 @@
 		class="boxPart"
 	>
 		<g id="cube" class="cubePart" fill="none" stroke="rgb(10,10,20)" stroke-width="0.07">
-			<polygon fill={cubeFill.cube[0]}
+			<polygon
+				fill="transparent"
 				points="1.1805,6.83071 1.1805,18.1693 11,23.8386 20.8195,18.1693 20.8195,6.83071 11,1.16142 "
 			/><!-- Cube outline -->
 			<polyline points="1.1805,6.83071 11,12.5 20.8195,6.83071 " /><!-- Top Connector -->
 			<polyline points="11,12.5 11,23.8386 " /><!-- Bottom Connector -->
 		</g>
-		<g id="cubeTop" class="cubePart" fill="none" stroke="rgb(10,10,20)" stroke-width="0.07">
+		<g class="cubePart" fill="none" stroke="rgb(10,10,20)" stroke-width="0.07">
 			<polygon
-				fill={cubeFill.cubeTop[0]}
+				id="cubeTop0"
+				fill="transparent"
 				points="11,2.15476 2.81708,6.83071 11,11.3661 18.937,6.83071 "
 			/><!-- Top -->
 		</g>
-		<g
-			id="cubeRight"
-			class="cubePart"
-			fill="none"
-			stroke="rgb(10,10,20)"
-			stroke-width="0.07"
-		>
-			<polygon fill={cubeFill.cubeRight[1]}
-				points="15.5006,20.2953 11.8183,22.4213 11.8183,18.1693 15.5006,16.0433 "
-			/><!-- Right / Bottom Left-->
-			<polygon fill={cubeFill.cubeRight[0]}
+		<g class="cubePart" fill="none" stroke="rgb(10,10,20)" stroke-width="0.07">
+			<polygon
+				id="cubeRight0"
+				fill="transparent"
 				points="15.5006,15.0984 11.8183,17.2244 11.8183,12.9724 15.5006,10.8465 "
 			/><!-- Right / Top Left -->
-			<polygon fill={cubeFill.cubeRight[2]}
+		</g>
+		<g class="cubePart" fill="none" stroke="rgb(10,10,20)" stroke-width="0.07">
+			<polygon
+				id="cubeRight1"
+				fill="transparent"
+				points="15.5006,20.2953 11.8183,22.4213 11.8183,18.1693 15.5006,16.0433 "
+			/><!-- Right / Bottom Left-->
+		</g>
+		<g class="cubePart" fill="none" stroke="rgb(10,10,20)" stroke-width="0.07">
+			<polygon
+				id="cubeRight2"
+				fill="transparent"
 				points="20.0012,8.24803 16.3189,10.374 16.3189,14.626 16.3189,19.8228 20.0012,17.6969 "
 			/><!-- Right / Right -->
 		</g>
-		<g
-			id="cubeLeft"
-			class="cubePart"
-			fill="none"
-			stroke="rgb(10,10,20)"
-			stroke-width="0.07"
-		>
-			<polygon fill={cubeFill.cubeLeft[1]}
-				points="1.99879,17.6969 1.99879,13.4449 6.4994,16.0433 6.4994,10.8465 10.1817,12.9724 10.1817,22.4213 "
-			/><!-- Left / Left -->
-			<polygon fill={cubeFill.cubeLeft[0]}
+		<g class="cubePart" fill="none" stroke="rgb(10,10,20)" stroke-width="0.07">
+			<polygon
+				id="cubeLeft0"
+				fill="transparent"
 				points="1.99879,12.5 1.99879,8.24803 5.6811,10.374 5.6811,14.626 "
 			/><!-- Left / Top Left -->
+		</g>
+		<g class="cubePart" fill="none" stroke="rgb(10,10,20)" stroke-width="0.07">
+			<polygon
+				id="cubeLeft1"
+				fill="transparent"
+				points="1.99879,17.6969 1.99879,13.4449 6.4994,16.0433 6.4994,10.8465 10.1817,12.9724 10.1817,22.4213 "
+			/><!-- Left / Left -->
 		</g>
 	</svg>
 </div>
@@ -87,14 +83,17 @@
 		fill-rule="evenodd"
 		xml:space="preserve"
 	>
-		<g fill="none" stroke="rgb(0,0,0)" stroke-width="0.05">
+		<g fill="red" stroke="rgb(0,0,0)" stroke-width="0.05">
 			<polyline
 				points="14.846,16.9707 14.846,20.4668 15.5006,20.8448 11.8183,22.9707 11.8183,18.7188 15.5006,16.5928 15.5006,20.8448 "
-			/>
+			/><!-- Right / Bottom Left -->
 			<polygon
 				points="20.0012,8.79752 16.3189,10.9235 16.3189,15.1755 16.3189,20.3723 20.0012,18.2463 "
-			/>
-			<polygon points="2.81708,7.3802 11,2.55504 19.1781,7.27946 10.9952,12.1046 " />
+			/><!-- Right / Right -->
+			<polygon points="2.81708,7.3802 11,2.55504 19.1781,7.27946 10.9952,12.1046 " /><!-- Top -->
+
+		</g>
+		<g fill="none" stroke="rgb(0,0,0)" stroke-width="0.05">
 			<polyline
 				points="11,24.3881 1.1805,18.7188 1.1805,7.3802 11,13.0495 11,24.3881 20.8195,18.7188 20.8195,7.3802 11,13.0495 "
 			/>
@@ -126,15 +125,23 @@
 		height: 50rem;
 		fill: transparent;
 	}
-	/*
-	#cubeTop:hover {
+
+	#cubeTop0:hover {
+		fill: cyan;
+	}
+	#cubeLeft0:hover {
 		fill: red;
 	}
-	#cubeLeft:hover {
-		fill: blue;
-	}
-	#cubeRight:hover {
+	#cubeLeft1:hover {
 		fill: green;
 	}
-*/
+	#cubeRight0:hover {
+		fill: yellow;
+	}
+	#cubeRight1:hover {
+		fill: blue;
+	}
+	#cubeRight2:hover {
+		fill: orange;
+	}
 </style>
