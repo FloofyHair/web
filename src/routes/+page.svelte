@@ -85,6 +85,7 @@
 			xml:space="preserve"
 			id="boxPressed"
 			class="boxPart"
+			style="opacity: 0;"
 		>
 			<g fill="red" stroke="rgb(0,0,0)" stroke-width="0.07">
 				<g
