@@ -7,6 +7,7 @@
 	});
 
 	let activeButton = '';
+	let primaryMouseButtonDown = false;
 
 	/**
 	 * @param {string} className
@@ -26,10 +27,21 @@
 			dog.classList.remove('active');
 			dog.classList.add('cube-shadow');
 		}
+		activeButton = '';
 	}
 </script>
 
-<svelte:body on:mouseup={() => buttonReleased()} on:keyup={() => buttonReleased()} />
+<svelte:body
+	on:mouseup={() => buttonReleased()}
+	on:keyup={() => buttonReleased()}
+	on:mousemove={(e) => {
+		let flags = e.buttons !== undefined ? e.buttons : e.which;
+		primaryMouseButtonDown = (flags & 1) === 1;
+		if (activeButton != '' && !primaryMouseButtonDown) {
+			buttonReleased();
+		}
+	}}
+/>
 
 <div id="container">
 	<div class="boxContainer">
@@ -315,10 +327,10 @@
 	}
 
 	.cube-shadow {
-		opacity: 0;
+		display: none;
 	}
 
 	.active {
-		opacity: 1 !important;
+		display: block;
 	}
 </style>
