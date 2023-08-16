@@ -297,17 +297,9 @@
 </div>
 
 <style>
-	:global(html),
-	:global(body) {
-		overflow: hidden;
-		border: 0;
-		padding: 0;
-		margin: 0;
-	}
 	#container {
 		width: 100vw;
 		height: 100vh;
-		background-color: wheat;
 	}
 	.boxContainer {
 		position: fixed;
