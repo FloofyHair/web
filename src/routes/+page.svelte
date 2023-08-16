@@ -6,27 +6,30 @@
 		new Vivus('box', { duration: 500, type: 'oneByOne' }, () => {});
 	});
 
+	let activeButton = '';
+
 	/**
 	 * @param {string} className
 	 */
-	 function buttonPressed(className) {
+	function buttonPressed(className) {
 		let theDogs = document.getElementsByClassName(className);
 		for (let dog of theDogs) {
 			dog.classList.add('active');
 			dog.classList.remove('cube-shadow');
 		}
+		activeButton = className;
 	}
-	/**
-	 * @param {string} className
-	 */
-	function buttonReleased(className) {
-		let theDogs = document.getElementsByClassName(className);
+
+	function buttonReleased() {
+		let theDogs = document.getElementsByClassName(activeButton);
 		for (let dog of theDogs) {
 			dog.classList.remove('active');
 			dog.classList.add('cube-shadow');
 		}
 	}
 </script>
+
+<svelte:body on:mouseup={() => buttonReleased()} on:keyup={() => buttonReleased()} />
 
 <div id="container">
 	<div class="boxContainer">
@@ -37,7 +40,7 @@
 			width="427"
 			height="683"
 			id="cube"
-			class="boxPart benis"
+			class="boxPart"
 			><defs
 				><clipPath id="MreExmZsqeoV"
 					><path
@@ -47,8 +50,8 @@
 					/></clipPath
 				></defs
 			><g transform="scale(1,1)" clip-path="url(#MreExmZsqeoV)"
-				><g
-					><path
+				><g>
+					<path
 						fill="rgb(153,51,0)"
 						stroke="rgb(10,10,20)"
 						paint-order="stroke fill markers"
@@ -75,6 +78,11 @@
 						fill-opacity="0.09803921568627451"
 						id="top-bg"
 					/>
+					<!--
+						-				-
+						-	Buttons		-
+						-				-
+					-->
 					<!-- svelte-ignore a11y-no-static-element-interactions -->
 					<path
 						fill="rgb(153,51,0)"
@@ -86,9 +94,8 @@
 						id="left-button-br"
 						on:mousedown={() => buttonPressed('left-shadow-br')}
 						on:keydown={() => buttonPressed('left-shadow-br')}
-						on:mouseup={() => buttonReleased('left-shadow-br')}
-						on:keyup={() => buttonReleased('left-shadow-br')}
 					/>
+					<!-- svelte-ignore a11y-no-static-element-interactions -->
 					<path
 						fill="rgb(153,51,0)"
 						stroke="rgb(10,10,20)"
@@ -97,7 +104,10 @@
 						d=" M 73.52144147521298 287.2660217429151 L 132.263167849406 321.18057327771834 L 132.33714206942864 389.13780345485446 L 73.52144147521295 355.180542884208 Z"
 						fill-opacity="0.09803921568627451"
 						id="left-button-tl"
+						on:mousedown={() => buttonPressed('left-shadow-tl')}
+						on:keydown={() => buttonPressed('left-shadow-tl')}
 					/>
+					<!-- svelte-ignore a11y-no-static-element-interactions -->
 					<path
 						fill="rgb(153,51,0)"
 						stroke="rgb(10,10,20)"
@@ -106,7 +116,10 @@
 						d=" M 243.83888844940108 365.932280829504 L 302.2579697448923 332.2040085177419 L 302.2579697448923 399.6605531412661 L 243.83888844940108 433.5430289256001 Z"
 						fill-opacity="0.09803921568627451"
 						id="right-button-tl"
+						on:mousedown={() => buttonPressed('right-shadow-tl')}
+						on:keydown={() => buttonPressed('right-shadow-tl')}
 					/>
+					<!-- svelte-ignore a11y-no-static-element-interactions -->
 					<path
 						fill="rgb(153,51,0)"
 						stroke="rgb(10,10,20)"
@@ -115,7 +128,10 @@
 						d=" M 243.83888844940108 455.8765560832039 L 302.2579697448923 422.0799820673956 L 302.2579697448923 489.5365266909198 L 243.83888844940108 523.2647990026819 Z"
 						fill-opacity="0.09803921568627451"
 						id="right-button-bl"
+						on:mousedown={() => buttonPressed('right-shadow-bl')}
+						on:keydown={() => buttonPressed('right-shadow-bl')}
 					/>
+					<!-- svelte-ignore a11y-no-static-element-interactions -->
 					<path
 						fill="rgb(153,51,0)"
 						stroke="rgb(10,10,20)"
@@ -124,7 +140,10 @@
 						d=" M 321.69524343156706 478.3144114956058 L 380.0928460287516 444.59853991609293 L 380.0928460287516 287.2660217429151 L 321.69524343156706 320.98189332242794 Z"
 						fill-opacity="0.09803921568627451"
 						id="right-button-r"
+						on:mousedown={() => buttonPressed('right-shadow-r')}
+						on:keydown={() => buttonPressed('right-shadow-r')}
 					/>
+					<!-- svelte-ignore a11y-no-static-element-interactions -->
 					<path
 						fill="rgb(153,51,0)"
 						stroke="rgb(10,10,20)"
@@ -133,6 +152,8 @@
 						d=" M 90.55318617263177 257.7661745854442 L 226.80714375198224 179.09991549885524 L 363.0611013313328 257.7661745854442 L 226.80714375198227 336.43243367203314 Z"
 						fill-opacity="0.09803921568627451"
 						id="top-button"
+						on:mousedown={() => buttonPressed('top-shadow')}
+						on:keydown={() => buttonPressed('top-shadow')}
 					/>
 					<!-- 
 						-							-
