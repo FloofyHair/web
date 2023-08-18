@@ -43,7 +43,7 @@
 	}}
 />
 
-<div id="container">
+<div id="">
 	<div class="boxContainer">
 		<svg
 			version="1.1"
@@ -309,10 +309,6 @@
 </div>
 
 <style>
-	#container {
-		width: 100vw;
-		height: 100vh;
-	}
 	.boxContainer {
 		position: fixed;
 		width: 100%;
