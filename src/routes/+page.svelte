@@ -42,48 +42,53 @@
 		}
 	}}
 />
-<div id="container">
-	<svg
-		version="1.1"
-		xmlns="http://www.w3.org/2000/svg"
-		xmlns:xlink="http://www.w3.org/1999/xlink"
-		id="cube"
-		><defs
-			><clipPath id="MreExmZsqeoV"
-				><path
-					fill="none"
-					stroke="rgb(10,10,20)"
-					d=" M 0 0 L 427 0 L 427 683 L 0 683 L 0 0 Z"
-				/>
-			</clipPath></defs>
-			<g id="cubeGroup">
-			<path
-				fill="rgb(153,51,0)"
-				stroke="rgb(10,10,20)"
-				paint-order="stroke fill markers"
-				fill-rule="evenodd"
-				d=" M 226.80714375198227 552.7646461601528 L 397.12459072617037 454.43182230191655 L 397.12459072617037 257.7661745854442 L 226.80714375198227 356.0989984436804 Z"
-				fill-opacity="0.09803921568627451"
-				id="right-bg"
-			/>
-			<path
-				fill="rgb(153,51,0)"
-				stroke="rgb(10,10,20)"
-				paint-order="stroke fill markers"
-				fill-rule="evenodd"
-				d=" M 226.80714375198227 552.7646461601528 L 56.48969677779411 454.43182230191655 L 56.48969677779414 257.7661745854442 L 226.80714375198227 356.0989984436804 Z"
-				fill-opacity="0.09803921568627451"
-				id="left-bg"
-			/>
-			<path
-				fill="rgb(153,51,0)"
-				stroke="rgb(10,10,20)"
-				paint-order="stroke fill markers"
-				fill-rule="evenodd"
-				d=" M 56.48969677779414 257.7661745854442 L 226.80714375198227 356.0989984436804 L 397.12459072617037 257.7661745854442 L 226.80714375198224 159.43335072720805 Z"
-				fill-opacity="0.09803921568627451"
-				id="top-bg"
-			/>
+<div>
+	<div class="boxContainer">
+		<svg
+			version="1.1"
+			xmlns="http://www.w3.org/2000/svg"
+			xmlns:xlink="http://www.w3.org/1999/xlink"
+			width="427"
+			height="683"
+			id="cube"
+			class="boxPart"
+			><defs
+				><clipPath id="MreExmZsqeoV"
+					><path
+						fill="none"
+						stroke="rgb(10,10,20)"
+						d=" M 0 0 L 427 0 L 427 683 L 0 683 L 0 0 Z"
+					/></clipPath
+				></defs
+			><g transform="scale(1,1)" clip-path="url(#MreExmZsqeoV)"
+				><g>
+					<path
+						fill="rgb(153,51,0)"
+						stroke="rgb(10,10,20)"
+						paint-order="stroke fill markers"
+						fill-rule="evenodd"
+						d=" M 226.80714375198227 552.7646461601528 L 397.12459072617037 454.43182230191655 L 397.12459072617037 257.7661745854442 L 226.80714375198227 356.0989984436804 Z"
+						fill-opacity="0.09803921568627451"
+						id="right-bg"
+					/>
+					<path
+						fill="rgb(153,51,0)"
+						stroke="rgb(10,10,20)"
+						paint-order="stroke fill markers"
+						fill-rule="evenodd"
+						d=" M 226.80714375198227 552.7646461601528 L 56.48969677779411 454.43182230191655 L 56.48969677779414 257.7661745854442 L 226.80714375198227 356.0989984436804 Z"
+						fill-opacity="0.09803921568627451"
+						id="left-bg"
+					/>
+					<path
+						fill="rgb(153,51,0)"
+						stroke="rgb(10,10,20)"
+						paint-order="stroke fill markers"
+						fill-rule="evenodd"
+						d=" M 56.48969677779414 257.7661745854442 L 226.80714375198227 356.0989984436804 L 397.12459072617037 257.7661745854442 L 226.80714375198224 159.43335072720805 Z"
+						fill-opacity="0.09803921568627451"
+						id="top-bg"
+					/>
 			<!--
 						-				-
 						-	Buttons		-
